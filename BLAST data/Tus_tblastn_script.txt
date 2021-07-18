@@ -1,0 +1,1 @@
+tblastn -db *database* -query Tus.fasta -out results.csv -outfmt "10 qseqid sseqid sstart send sstrand evalue sseq length"
