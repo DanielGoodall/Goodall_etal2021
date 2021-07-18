@@ -1,8 +1,11 @@
-# Using genoplotr from Bowtie2 data not BLAST to compare the differences
+# updating the figure after paper rejection
+## make the ter sites more visible
+## delete the comparison lines
+## colour code the ter labels with the arrow fill colour
+
+# Using genoplotr from Bpwtie2 data not BLAST to compare the differences
 
 library(Biostrings)
-library(DECIPHER)
-library(msa)
 library(seqinr)
 library(genoPlotR)
 
@@ -163,6 +166,85 @@ TW14359
 Sakai
 EDL933
 
+
+###############################
+#         ADD DIF
+###############################
+dif <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\BLAST_results\\Ecoli\\Ecoli_dif_blastn.csv', header = FALSE)
+dif <- dif[-c(4,6,7)]
+colnames(dif) <- c('name', 'start', 'end', 'strand')
+dif$strand[dif$strand == 'minus'] <- '-'
+dif$strand[dif$strand == 'plus'] <- '+'
+dif
+
+
+# add dif to the pre-made ter dfs
+MG1655 <- rbind(MG1655, dif[dif$name=='MG1655',])
+BW2952 <- rbind(BW2952, dif[dif$name=='BW2952',])
+REL606 <- rbind(REL606, dif[dif$name=='REL606',])
+APEC078 <- rbind(APEC078, dif[dif$name=='APECO78',])
+IAI1 <- rbind(IAI1, dif[dif$name=='IAI1',])
+E11368 <- rbind(E11368, dif[dif$name=='11368',])
+S88 <- rbind(S88, dif[dif$name=='S88',])
+UTI89 <- rbind(UTI89, dif[dif$name=='UTI89',])
+E2348 <- rbind(E2348, dif[dif$name=='E2348/69',])
+IAI39 <- rbind(IAI39, dif[dif$name=='IAI39',])
+SMS35 <- rbind(SMS35, dif[dif$name=='SMS-3-5',])
+UMN026 <- rbind(UMN026, dif[dif$name=='UMN026',])
+CE10 <- rbind(CE10, dif[dif$name=='CE10',])
+D042 <- rbind(D042, dif[dif$name=='42',])
+TW14359 <- rbind(TW14359, dif[dif$name=='TW14359',])
+Sakai <- rbind(Sakai, dif[dif$name=='Sakai',])
+EDL933 <- rbind(EDL933, dif[dif$name=='EDL933',])
+
+
+# RENAME [11] AS dif
+MG1655$name[11] <- 'dif'
+BW2952$name[11] <- 'dif'
+REL606$name[11] <- 'dif'
+APEC078$name[11] <- 'dif'
+IAI1$name[11] <- 'dif'
+E11368$name[11] <- 'dif'
+S88$name[11] <- 'dif'
+UTI89$name[11] <- 'dif'
+E2348$name[11] <- 'dif'
+IAI39$name[11] <- 'dif'
+SMS35$name[11] <- 'dif'
+UMN026$name[11] <- 'dif'
+CE10$name[11] <- 'dif'
+D042$name[11] <- 'dif'
+TW14359$name[11] <- 'dif'
+Sakai$name[11] <- 'dif'
+EDL933$name[11] <- 'dif'
+
+# reset indexes
+#A
+rownames(MG1655) <- NULL
+rownames(BW2952) <- NULL
+rownames(REL606) <- NULL
+
+#B1
+rownames(APEC078) <- NULL
+rownames(IAI1) <- NULL
+rownames(E11368) <- NULL
+
+#B2
+rownames(S88) <- NULL
+rownames(UTI89) <- NULL
+rownames(E2348) <- NULL
+
+#D
+rownames(IAI39) <- NULL
+rownames(SMS35) <- NULL
+rownames(UMN026) <- NULL
+rownames(CE10) <- NULL
+rownames(D042) <- NULL
+
+#E
+rownames(TW14359) <- NULL
+rownames(Sakai) <- NULL
+rownames(EDL933) <- NULL
+
 ###########################################################
 #     now use Genoplotr package andf dna_seg objects
 ###########################################################
@@ -190,30 +272,104 @@ dna15 <- dna_seg(TW14359)
 dna16 <- dna_seg(Sakai)
 dna17 <- dna_seg(EDL933)
 
-cols <- c('red', 'blue', 'orange', 'green', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey')
+cols <- c('red', 'blue', 'orange', 'darkgreen', 'purple', 'grey', 'grey', 'grey', 'grey', 'grey', 'black')
 
 # SPECIFY THE COL COLOUR
-dna1$col <- cols
-dna2$col <- cols
-dna3$col <- cols
+dna1$col <- 'black'
+dna2$col <- 'black'
+dna3$col <- 'black'
 
-dna4$col <- cols
-dna5$col <- cols
-dna6$col <- cols
+dna4$col <- 'black'
+dna5$col <- 'black'
+dna6$col <- 'black'
 
-dna7$col <- cols
-dna8$col <- cols
-dna9$col <- cols
+dna7$col <- 'black'
+dna8$col <- 'black'
+dna9$col <- 'black'
 
-dna10$col <- cols
-dna11$col <- cols
-dna12$col <- cols
-dna13$col <- cols
-dna14$col <- cols
+dna10$col <- 'black'
+dna11$col <- 'black'
+dna12$col <- 'black'
+dna13$col <- 'black'
+dna14$col <- 'black'
 
-dna15$col <- cols
-dna16$col <- cols
-dna17$col <- cols
+dna15$col <- 'black'
+dna16$col <- 'black'
+dna17$col <- 'black'
+
+# SPECIFY THE FILL COLOUR
+dna1$fill <- cols
+dna2$fill <- cols
+dna3$fill <- cols
+
+dna4$fill <- cols
+dna5$fill <- cols
+dna6$fill <- cols
+
+dna7$fill <- cols
+dna8$fill <- cols
+dna9$fill <- cols
+
+dna10$fill <- cols
+dna11$fill <- cols
+dna12$fill <- cols
+dna13$fill <- cols
+dna14$fill <- cols
+
+dna15$fill <- cols
+dna16$fill <- cols
+dna17$fill <- cols
+
+# INCREASING END POS BY 10000 NT TO ENLARGE ARROWS
+dna1$end[1:10] <- c(dna1$start[1:10] + 50000)
+dna2$end[1:10] <- c(dna2$start[1:10] + 50000)
+dna3$end[1:10] <- c(dna3$start[1:10] + 50000)
+
+dna4$end[1:10] <- c(dna4$start[1:10] + 50000)
+dna5$end[1:10] <- c(dna5$start[1:10] + 50000)
+dna6$end[1:10] <- c(dna6$start[1:10] + 50000)
+
+dna7$end[1:10] <- c(dna7$start[1:10] + 50000)
+dna8$end[1:10] <- c(dna8$start[1:10] + 50000)
+dna9$end[1:10] <- c(dna9$start[1:10] + 50000)
+
+dna10$end[1:10] <- c(dna10$start[1:10] + 50000)
+dna11$end[1:10] <- c(dna11$start[1:10] + 50000)
+dna12$end[1:10] <- c(dna12$start[1:10] + 50000)
+dna13$end[1:10] <- c(dna13$start[1:10] + 50000)
+dna14$end[1:10] <- c(dna14$start[1:10] + 50000)
+
+dna15$end[1:10] <- c(dna15$start[1:10] + 50000)
+dna16$end[1:10] <- c(dna16$start[1:10] + 50000)
+dna17$end[1:10] <- c(dna17$start[1:10] + 50000)
+
+# change dif to be side blocks
+dna1$gene_type[11] <- 'side_blocks'
+dna2$gene_type[11] <- 'side_blocks'
+dna3$gene_type[11] <- 'side_blocks'
+dna4$gene_type[11] <- 'side_blocks'
+dna5$gene_type[11] <- 'side_blocks'
+dna6$gene_type[11] <- 'side_blocks'
+dna7$gene_type[11] <- 'side_blocks'
+dna8$gene_type[11] <- 'side_blocks'
+dna9$gene_type[11] <- 'side_blocks'
+dna10$gene_type[11] <- 'side_blocks'
+dna11$gene_type[11] <- 'side_blocks'
+dna12$gene_type[11] <- 'side_blocks'
+dna13$gene_type[11] <- 'side_blocks'
+dna14$gene_type[11] <- 'side_blocks'
+dna15$gene_type[11] <- 'side_blocks'
+dna16$gene_type[11] <- 'side_blocks'
+dna17$gene_type[11] <- 'side_blocks'
+
+# specify dif parameters to stop terC overlap EDL933 and SMS35
+dna17$start[11] <- c(dna17$start[3] + 50700)
+dna17$end[11] <- c(dna17$start[3] + 50750)
+dna17
+
+dna11$start[11] <- c(dna11$start[3] + 50700)
+dna11$end[11] <- c(dna11$start[3] + 50750)
+dna11
 
 # turn into a massive list
 dna_segs <-list(dna1,
@@ -258,11 +414,11 @@ dna16
 dna17
 
 
-
 # give names which will be used as the plot label
-names(dna_segs) <- c('MG1655','BW2952','REL606','APEC078','IAI1','11368',
-                     'S88','UTI89','E2348/69','IAI39','SMS35','UMN026','CE10',
-                     '042','TW14359','Sakai','EDL933')
+names <- c('MG1655','BW2952','REL606','APEC078','IAI1','11368',
+              'S88','UTI89','E2348/69','IAI39','SMS35','UMN026','CE10',
+              '042','TW14359','Sakai','EDL933')
+names(dna_segs) <- names
 
 # SANITY
 dna_segs
@@ -287,23 +443,23 @@ mid_pos16 <- middle(dna_segs[[16]])
 mid_pos17 <- middle(dna_segs[[17]])
 
 # Annotations
-annot1 <- annotation(x1 = mid_pos1, text = dna_segs[[1]]$name, rot = 90, col = 'black')
-annot2 <- annotation(x1 = mid_pos2, text = dna_segs[[2]]$name, rot = 90, col = 'black')
-annot3 <- annotation(x1 = mid_pos3, text = dna_segs[[3]]$name, rot = 90, col = 'black')
-annot4 <- annotation(x1 = mid_pos4, text = dna_segs[[4]]$name, rot = 90, col = 'black')
-annot5 <- annotation(x1 = mid_pos5, text = dna_segs[[5]]$name, rot = 90, col = 'black')
-annot6 <- annotation(x1 = mid_pos6, text = dna_segs[[6]]$name, rot = 90, col = 'black')
-annot7 <- annotation(x1 = mid_pos7, text = dna_segs[[7]]$name, rot = 90, col = 'black')
-annot8 <- annotation(x1 = mid_pos8, text = dna_segs[[8]]$name, rot = 90, col = 'black')
-annot9 <- annotation(x1 = mid_pos9, text = dna_segs[[9]]$name, rot = 90, col = 'black')
-annot10 <- annotation(x1 = mid_pos10, text = dna_segs[[10]]$name, rot = 90, col = 'black')
-annot11 <- annotation(x1 = mid_pos11, text = dna_segs[[11]]$name, rot = 90, col = 'black')
-annot12 <- annotation(x1 = mid_pos12, text = dna_segs[[12]]$name, rot = 90, col = 'black')
-annot13 <- annotation(x1 = mid_pos13, text = dna_segs[[13]]$name, rot = 90, col = 'black')
-annot14 <- annotation(x1 = mid_pos14, text = dna_segs[[14]]$name, rot = 90, col = 'black')
-annot15 <- annotation(x1 = mid_pos15, text = dna_segs[[15]]$name, rot = 90, col = 'black')
-annot16 <- annotation(x1 = mid_pos16, text = dna_segs[[16]]$name, rot = 90, col = 'black')
-annot17 <- annotation(x1 = mid_pos17, text = dna_segs[[17]]$name, rot = 90, col = 'black')
+annot1 <- annotation(x1 = mid_pos1, text = dna_segs[[1]]$name, rot = 90, col = cols)
+annot2 <- annotation(x1 = mid_pos2, text = dna_segs[[2]]$name, rot = 90, col = cols)
+annot3 <- annotation(x1 = mid_pos3, text = dna_segs[[3]]$name, rot = 90, col = cols)
+annot4 <- annotation(x1 = mid_pos4, text = dna_segs[[4]]$name, rot = 90, col = cols)
+annot5 <- annotation(x1 = mid_pos5, text = dna_segs[[5]]$name, rot = 90, col = cols)
+annot6 <- annotation(x1 = mid_pos6, text = dna_segs[[6]]$name, rot = 90, col = cols)
+annot7 <- annotation(x1 = mid_pos7, text = dna_segs[[7]]$name, rot = 90, col = cols)
+annot8 <- annotation(x1 = mid_pos8, text = dna_segs[[8]]$name, rot = 90, col = cols)
+annot9 <- annotation(x1 = mid_pos9, text = dna_segs[[9]]$name, rot = 90, col = cols)
+annot10 <- annotation(x1 = mid_pos10, text = dna_segs[[10]]$name, rot = 90, col = cols)
+annot11 <- annotation(x1 = mid_pos11, text = dna_segs[[11]]$name, rot = 90, col = cols)
+annot12 <- annotation(x1 = mid_pos12, text = dna_segs[[12]]$name, rot = 90, col = cols)
+annot13 <- annotation(x1 = mid_pos13, text = dna_segs[[13]]$name, rot = 90, col = cols)
+annot14 <- annotation(x1 = mid_pos14, text = dna_segs[[14]]$name, rot = 90, col = cols)
+annot15 <- annotation(x1 = mid_pos15, text = dna_segs[[15]]$name, rot = 90, col = cols)
+annot16 <- annotation(x1 = mid_pos16, text = dna_segs[[16]]$name, rot = 90, col = cols)
+annot17 <- annotation(x1 = mid_pos17, text = dna_segs[[17]]$name, rot = 90, col = cols)
 
 #list of annotation objects
 annots <- list(annot1, annot2, annot3, annot4, annot5, annot6, annot7, annot8, annot9, annot10, annot11, annot12, annot13, annot14, annot15, annot16, annot17)
@@ -312,15 +468,319 @@ annots <- list(annot1, annot2, annot3, annot4, annot5, annot6, annot7, annot8, a
 plot_gene_map(dna_segs=dna_segs, comparisons=NULL,
               annotations = annots, annotation_height = 3, annotation_cex = 0.6,
               main = 'E.coli Ter Locations Determined by BOWTIE2',
-              dna_seg_scale=FALSE, gene_type = 'side_blocks',  dna_seg_label_cex=0.8)
+              dna_seg_scale=FALSE,  dna_seg_label_cex=0.8, scale = FALSE,
+              arrow_head_len = 30000, gene_type = 'side_blocks')
 
 
 ###################################################################################################################
 #
-#       FIGURE IS THE SAME AS FROM BLAST PROGRAM,  NO ISSUE HERE CAN USE THE BLAST PROGRAM IN M&M
+#                                                   REVERSE PLOT
 #
 ###################################################################################################################
 
+
+# reverse each dna_seg object
+dna1_r <- reverse(dna1)
+dna2_r <- reverse(dna2)
+dna3_r <- reverse(dna3)
+
+dna4_r <- reverse(dna4)
+dna5_r <- reverse(dna5)
+dna6_r <- reverse(dna6)
+
+dna7_r <- reverse(dna7)
+dna8_r <- reverse(dna8)
+dna9_r <- reverse(dna9)
+
+dna10_r <- reverse(dna10)
+dna11_r <- reverse(dna11)
+dna12_r <- reverse(dna12)
+dna13_r <- reverse(dna13)
+dna14_r <- reverse(dna14)
+
+dna15_r <- reverse(dna15)
+dna16_r <- reverse(dna16)
+dna17_r <- reverse(dna17)
+
+
+# sanity
+dna1_r
+dna2_r
+dna3_r
+
+dna4_r
+dna5_r
+dna6_r
+
+dna7_r
+dna8_r
+dna9_r
+
+dna10_r
+dna11_r
+dna12_r
+dna13_r
+dna14_r
+
+dna15_r
+dna16_r
+dna17_r
+
+# reset the strand column back to the original dna_seg 
+## this will show the ter site in correct polarity
+dna1_r$strand <- dna1$strand
+dna2_r$strand <- dna2$strand
+dna3_r$strand <- dna3$strand
+
+dna4_r$strand <- dna4$strand
+dna5_r$strand <- dna5$strand
+dna6_r$strand <- dna6$strand
+
+dna7_r$strand <- dna7$strand
+dna8_r$strand <- dna8$strand
+dna9_r$strand <- dna9$strand
+
+dna10_r$strand <- dna10$strand
+dna11_r$strand <- dna11$strand
+dna12_r$strand <- dna12$strand
+dna13_r$strand <- dna13$strand
+dna14_r$strand <- dna14$strand
+
+dna15_r$strand <- dna15$strand
+dna16_r$strand <- dna16$strand
+dna17_r$strand <- dna17$strand
+
+
+
+
+
+
+
+#################################################
+
+#       TURN ALL GENOMES INTO plusGrob or MinGrob
+
+#################################################
+###########################################
+#     Using triangle shape (grob)
+###########################################
+
+## TEMPLATE
+## Functions returning grobs.
+## Creates a triangle for ter sites
+triangleGrob <- function(gene, ...) {
+  x <- c(gene$start, (gene$start+gene$end)/2, gene$end)
+  y1 <- 0.5 + 0.5*gene$strand
+  y <- c(y1, 0.5, y1)
+  polygonGrob(x, y,gp=gpar(fill=gene$fill, col=gene$col, lty=gene$lty,
+                           lwd=gene$lwd), default.units="native")
+}
+
+# template set...
+# set the genetype in each df to triangleGrob
+dna1_r$gene_type[1:10] <- 'triangleGrob'
+dna4_r$gene_type[1:10] <- 'triangleGrob'
+dna7_r$gene_type[1:10] <- 'triangleGrob'
+dna12_r$gene_type[1:10] <- 'triangleGrob'
+dna15_r$gene_type[1:10] <- 'triangleGrob'
+
+##################################################################################
+## Creates a permissible triangle shape grob for ter sites
+# plus grobs
+plusGrob <- function(gene, ...) {
+  plus_x <- c((gene$start+gene$end)/2, (gene$start+gene$end)/2, gene$end+5000)
+  plus_y <- c(1.1, -0.1, 0.5)
+  polygonGrob(plus_x, plus_y,gp=gpar(fill=gene$fill, col=gene$col, lty=gene$lty,
+                                     lwd=gene$lwd), default.units="native")
+}
+
+# min grob
+minGrob <- function(gene, ...) {
+  min_x <- c(gene$start-5000, (gene$start+gene$end)/2, (gene$start+gene$end)/2)
+  min_y <- c(0.5, -0.1, 1.1)
+  polygonGrob(min_x, min_y,gp=gpar(fill=gene$fill, col=gene$col, lty=gene$lty,
+                                   lwd=gene$lwd), default.units="native")
+}
+###################################################################################
+
+
+
+# Turn gene_type into plusGrob if + strand
+dna1_r$gene_type[1:10][dna1_r$strand[1:10]==1] <- 'plusGrob'
+dna2_r$gene_type[1:10][dna2_r$strand[1:10]==1] <- 'plusGrob'
+dna3_r$gene_type[1:10][dna3_r$strand[1:10]==1] <- 'plusGrob'
+
+dna4_r$gene_type[1:10][dna4_r$strand[1:10]==1] <- 'plusGrob'
+dna5_r$gene_type[1:10][dna5_r$strand[1:10]==1] <- 'plusGrob'
+dna6_r$gene_type[1:10][dna6_r$strand[1:10]==1] <- 'plusGrob'
+
+dna7_r$gene_type[1:10][dna7_r$strand[1:10]==1] <- 'plusGrob'
+dna8_r$gene_type[1:10][dna8_r$strand[1:10]==1] <- 'plusGrob'
+dna9_r$gene_type[1:10][dna9_r$strand[1:10]==1] <- 'plusGrob'
+
+dna10_r$gene_type[1:10][dna10_r$strand[1:10]==1] <- 'plusGrob'
+dna11_r$gene_type[1:10][dna11_r$strand[1:10]==1] <- 'plusGrob'
+dna12_r$gene_type[1:10][dna12_r$strand[1:10]==1] <- 'plusGrob'
+dna13_r$gene_type[1:10][dna13_r$strand[1:10]==1] <- 'plusGrob'
+dna14_r$gene_type[1:10][dna14_r$strand[1:10]==1] <- 'plusGrob'
+
+dna15_r$gene_type[1:10][dna15_r$strand[1:10]==1] <- 'plusGrob'
+dna16_r$gene_type[1:10][dna16_r$strand[1:10]==1] <- 'plusGrob'
+dna17_r$gene_type[1:10][dna17_r$strand[1:10]==1] <- 'plusGrob'
+
+
+# Turn gene_type into minGrob if - strand
+dna1_r$gene_type[1:10][dna1_r$strand[1:10]==-1] <- 'minGrob'
+dna2_r$gene_type[1:10][dna2_r$strand[1:10]==-1] <- 'minGrob'
+dna3_r$gene_type[1:10][dna3_r$strand[1:10]==-1] <- 'minGrob'
+
+dna4_r$gene_type[1:10][dna4_r$strand[1:10]==-1] <- 'minGrob'
+dna5_r$gene_type[1:10][dna5_r$strand[1:10]==-1] <- 'minGrob'
+dna6_r$gene_type[1:10][dna6_r$strand[1:10]==-1] <- 'minGrob'
+
+dna7_r$gene_type[1:10][dna7_r$strand[1:10]==-1] <- 'minGrob'
+dna8_r$gene_type[1:10][dna8_r$strand[1:10]==-1] <- 'minGrob'
+dna9_r$gene_type[1:10][dna9_r$strand[1:10]==-1] <- 'minGrob'
+
+dna10_r$gene_type[1:10][dna10_r$strand[1:10]==-1] <- 'minGrob'
+dna11_r$gene_type[1:10][dna11_r$strand[1:10]==-1] <- 'minGrob'
+dna12_r$gene_type[1:10][dna12_r$strand[1:10]==-1] <- 'minGrob'
+dna13_r$gene_type[1:10][dna13_r$strand[1:10]==-1] <- 'minGrob'
+dna14_r$gene_type[1:10][dna14_r$strand[1:10]==-1] <- 'minGrob'
+
+dna15_r$gene_type[1:10][dna15_r$strand[1:10]==-1] <- 'minGrob'
+dna16_r$gene_type[1:10][dna16_r$strand[1:10]==-1] <- 'minGrob'
+dna17_r$gene_type[1:10][dna17_r$strand[1:10]==-1] <- 'minGrob'
+
+
+
+
+# turn into list
+dna_segs_r <- list(dna1_r,
+               dna2_r,
+               dna3_r,
+               dna4_r,
+               dna5_r,
+               dna6_r,
+               dna7_r,
+               dna8_r,
+               dna9_r,
+               dna10_r,
+               dna11_r,
+               dna12_r,
+               dna13_r,
+               dna14_r,
+               dna15_r,
+               dna16_r,
+               dna17_r)
+
+names(dna_segs_r) <- names
+dna_segs_r
+
+
+
+## Calculating middle positions
+mid_pos1_r <- middle(dna_segs_r[[1]])
+mid_pos2_r <- middle(dna_segs_r[[2]])
+mid_pos3_r <- middle(dna_segs_r[[3]])
+mid_pos4_r <- middle(dna_segs_r[[4]])
+mid_pos5_r <- middle(dna_segs_r[[5]])
+mid_pos6_r <- middle(dna_segs_r[[6]])
+mid_pos7_r <- middle(dna_segs_r[[7]])
+mid_pos8_r <- middle(dna_segs_r[[8]])
+mid_pos9_r <- middle(dna_segs_r[[9]])
+mid_pos10_r <- middle(dna_segs_r[[10]])
+mid_pos11_r <- middle(dna_segs_r[[11]])
+mid_pos12_r <- middle(dna_segs_r[[12]])
+mid_pos13_r <- middle(dna_segs_r[[13]])
+mid_pos14_r <- middle(dna_segs_r[[14]])
+mid_pos15_r <- middle(dna_segs_r[[15]])
+mid_pos16_r <- middle(dna_segs_r[[16]])
+mid_pos17_r <- middle(dna_segs_r[[17]])
+
+# Annotations
+annot1_r <- annotation(x1 = mid_pos1_r, text = dna_segs_r[[1]]$name, rot = 90, col = cols)
+annot2_r <- annotation(x1 = mid_pos2_r, text = dna_segs_r[[2]]$name, rot = 90, col = cols)
+annot3_r <- annotation(x1 = mid_pos3_r, text = dna_segs_r[[3]]$name, rot = 90, col = cols)
+annot4_r <- annotation(x1 = mid_pos4_r, text = dna_segs_r[[4]]$name, rot = 90, col = cols)
+annot5_r <- annotation(x1 = mid_pos5_r, text = dna_segs_r[[5]]$name, rot = 90, col = cols)
+annot6_r <- annotation(x1 = mid_pos6_r, text = dna_segs_r[[6]]$name, rot = 90, col = cols)
+annot7_r <- annotation(x1 = mid_pos7_r, text = dna_segs_r[[7]]$name, rot = 90, col = cols)
+annot8_r <- annotation(x1 = mid_pos8_r, text = dna_segs_r[[8]]$name, rot = 90, col = cols)
+annot9_r <- annotation(x1 = mid_pos9_r, text = dna_segs_r[[9]]$name, rot = 90, col = cols)
+annot10_r <- annotation(x1 = mid_pos10_r, text = dna_segs_r[[10]]$name, rot = 90, col = cols)
+annot11_r <- annotation(x1 = mid_pos11_r, text = dna_segs_r[[11]]$name, rot = 90, col = cols)
+annot12_r <- annotation(x1 = mid_pos12_r, text = dna_segs_r[[12]]$name, rot = 90, col = cols)
+annot13_r <- annotation(x1 = mid_pos13_r, text = dna_segs_r[[13]]$name, rot = 90, col = cols)
+annot14_r <- annotation(x1 = mid_pos14_r, text = dna_segs_r[[14]]$name, rot = 90, col = cols)
+annot15_r <- annotation(x1 = mid_pos15_r, text = dna_segs_r[[15]]$name, rot = 90, col = cols)
+annot16_r <- annotation(x1 = mid_pos16_r, text = dna_segs_r[[16]]$name, rot = 90, col = cols)
+annot17_r <- annotation(x1 = mid_pos17_r, text = dna_segs_r[[17]]$name, rot = 90, col = cols)
+
+#list of annotation objects
+annots_r <- list(annot1_r, 
+                 annot2_r, 
+                 annot3_r, 
+                 annot4_r, 
+                 annot5_r, 
+                 annot6_r, 
+                 annot7_r, 
+                 annot8_r, 
+                 annot9_r, 
+                 annot10_r, 
+                 annot11_r, 
+                 annot12_r, 
+                 annot13_r, 
+                 annot14_r, 
+                 annot15_r, 
+                 annot16_r, 
+                 annot17_r)
+
+
+
+
+
+# plot all E.coli genomes figure with plus/minGrob
+plot_gene_map(dna_segs=dna_segs_r, comparisons=NULL,
+              annotations = annots_r, annotation_height = 3, annotation_cex = 0.6,
+              main = 'E.coli Ter Locations Showing Permissive Directionality',
+              dna_seg_scale=FALSE,  dna_seg_label_cex=0.8, scale = FALSE)
+
+
+
+
+#################################################
+
+#    5 PHYLOGROUP FIGURE
+
+#################################################
+
+
+
+
+# set the genetype in each df to plusGrob if + strand
+dna1_r$gene_type[1:10][dna1_r$strand[1:10]==1] <- 'plusGrob'
+dna4_r$gene_type[1:10][dna4_r$strand[1:10]==1] <- 'plusGrob'
+dna7_r$gene_type[1:10][dna7_r$strand[1:10]==1] <- 'plusGrob'
+dna12_r$gene_type[1:10][dna12_r$strand[1:10]==1] <- 'plusGrob'
+dna15_r$gene_type[1:10][dna15_r$strand[1:10]==1] <- 'plusGrob'
+
+# set the genetype in each df to minGrob if - strand
+dna1_r$gene_type[1:10][dna1_r$strand[1:10]==-1] <- 'minGrob'
+dna4_r$gene_type[1:10][dna4_r$strand[1:10]==-1] <- 'minGrob'
+dna7_r$gene_type[1:10][dna7_r$strand[1:10]==-1] <- 'minGrob'
+dna12_r$gene_type[1:10][dna12_r$strand[1:10]==-1] <- 'minGrob'
+dna15_r$gene_type[1:10][dna15_r$strand[1:10]==-1] <- 'minGrob'
+
+
+
+
+# plot 5 Phylogroup figure
+plot_gene_map(dna_segs=list(dna1_r, dna4_r,dna7_r,dna12_r,dna15_r), comparisons=NULL,
+              annotations = list(annot1_r, annot4_r, annot7_r,annot12_r,annot15_r), annotation_height = 3, annotation_cex = 0.9,
+              main = 'Phylogroup Analysis of E.coli ter sites',
+              dna_seg_scale=FALSE,  dna_seg_label_cex=1, scale = FALSE, gene_type = NULL,
+              dna_seg_labels = c('MG1655 \nGroup A','APEC078 \nGroup B1','S88 \nGroup B2','UNM026 \n Group D','TW14359 \nGroup E'))
 
 
 

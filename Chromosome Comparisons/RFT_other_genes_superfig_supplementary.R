@@ -871,11 +871,7 @@ TW14359
 Sakai
 EDL933
 
-##########################################
-#
-#   NEW WAY TO CLEAN DATAFRAMES WITH LAPPLY
-#               16/04/21
-##########################################
+
 
 # Drop the Strain column and add the end column
 # without specifying [-1] for every df
