@@ -16,7 +16,7 @@ https://www.bioconductor.org/
 
 '''
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
+% if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install(version = "3.13")
 
