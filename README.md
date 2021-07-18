@@ -21,6 +21,18 @@ BiocManager::install(version = "3.13")
 ```
 
 ## Packages
+- 
+-
+-
+-
+-
+
+# GenoPlotR
+https://genoplotr.r-forge.r-project.org/
+
+```{r}
+install.packages("genoPlotR")
+```
 
 
 
