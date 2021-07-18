@@ -34,6 +34,14 @@ https://genoplotr.r-forge.r-project.org/
 install.packages("genoPlotR")
 ```
 
+# BLAST
+https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download
+
+stand-alone set up for Windows PC
+https://www.ncbi.nlm.nih.gov/books/NBK52637/
+
+
+
 
 
 
