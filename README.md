@@ -14,11 +14,11 @@ https://www.rstudio.com/
 # Install Bioconductor
 https://www.bioconductor.org/
 
-'''{r}
+```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install(version = "3.13")
-'''
+```
 
 ## Packages
 
