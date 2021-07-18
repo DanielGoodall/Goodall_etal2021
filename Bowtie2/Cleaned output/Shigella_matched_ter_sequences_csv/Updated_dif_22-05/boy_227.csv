@@ -1,0 +1,5 @@
+"rname","qname","pos","qwidth","strand","seq"
+"boy_227","dif",1539612,28,"+","GGTGCGCATAATGTATATTATGT"
+"boy_227","terA",1761314,23,"+","AACTAGCATGTTGTAACTAAAGT"
+"boy_227","terB",1507969,23,"-","ATTAAGGATGTTGTAACTAAAGT"
+"boy_227","terD",1823643,23,"+","CATTAGTATGTTGTAACTAAATA"

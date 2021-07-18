@@ -1,0 +1,5 @@
+"rname","qname","pos","qwidth","strand","seq"
+"flex_Shi06","terA",1376916,23,"-","AACTAGTATGTTGTAACTAAAGT"
+"flex_Shi06","terB",1701478,23,"+","AATAAGTATGTTGTAACTAAAGT"
+"flex_Shi06","terC",1646489,23,"-","ATATAGGATGTTGTAACTAACAT"
+"flex_Shi06","terD",1316076,23,"-","CACTAATATGTTGTAACTAAATG"

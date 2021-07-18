@@ -1,0 +1,6 @@
+"rname","qname","pos","qwidth","strand","seq"
+"flex_2a","dif",1611576,28,"-","GCATAATGTATATTATGTTAAAT"
+"flex_2a","terA",1336028,23,"-","AACTAGTATGTTGTAACTAAAGT"
+"flex_2a","terB",1660606,23,"+","AATAAGTATGTTGTAACTAAAGT"
+"flex_2a","terC",1605616,23,"-","ATATAGGATGTTGTAACTAACAT"
+"flex_2a","terD",1275216,23,"-","CACTAATATGTTGTAACTAAATG"
