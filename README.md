@@ -9,9 +9,16 @@
 https://www.r-project.org/
 
 # Install Rstudio
+https://www.rstudio.com/
 
+# Install Bioconductor
+https://www.bioconductor.org/
 
-# Bioconductor
+'''
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.13")
+'''
 
 ## Packages
 
