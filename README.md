@@ -21,11 +21,11 @@ BiocManager::install(version = "3.13")
 ```
 
 ## Packages
-- 
--
--
--
--
+- Biostrings (manipulation of genetic strings)
+- DECIPHER (analysing and manipulating sequences)
+- msa (alignment algorithm wrapper package)
+- Rbowtie2
+- Rsamtools
 
 # GenoPlotR
 https://genoplotr.r-forge.r-project.org/
