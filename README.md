@@ -22,7 +22,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install(version = "3.13")
 ```
 
-## Packages
+## Packages in this study
 - Biostrings (manipulation of genetic strings)
 - DECIPHER (analysing and manipulating sequences)
 - msa (alignment algorithm wrapper package)
