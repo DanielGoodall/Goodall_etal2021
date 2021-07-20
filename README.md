@@ -14,6 +14,8 @@ https://www.rstudio.com/
 # Install Bioconductor
 https://www.bioconductor.org/
 
+Bioconductor provides tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development. It has two releases each year, and an active user community.
+
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
