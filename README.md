@@ -29,6 +29,7 @@ BiocManager::install(version = "3.13")
 
 # GenoPlotR
 https://genoplotr.r-forge.r-project.org/
+
 genoPlotR is a R package to produce reproducible, publication-grade graphics of gene and genome maps. It allows the user to read from usual format such as protein table files and blast results, as well as home-made tabular files.
 
 ```{r}
