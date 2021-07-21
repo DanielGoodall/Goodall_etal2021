@@ -2,7 +2,7 @@
 # Date created: 10/06/21
 
 ##############################################################################################
-#                       ALIGNING TEMPLATE TER SEQS AGAINST Salmonella GENOME - BLAST EQUIVALENT
+#                       ALIGNING TEMPLATE TER SEQS AGAINST Salmonella GENOME
 ############################################################################################
 
 # Get the seq alignment file of ter first
@@ -376,7 +376,7 @@ msaPrettyPrint(x=DT104_msa, output = 'pdf', file='Salmonella_DT104_MSA_12-06.pdf
 
 
 
-# ______________________________________________ K.pneumoniae
+# ______________________________________________
 FDAARGOS_878
 
 FDAARGOS878_temp <- FDAARGOS_878[-c(1,11),]

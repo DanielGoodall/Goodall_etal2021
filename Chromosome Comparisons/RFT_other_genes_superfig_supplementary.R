@@ -6,10 +6,8 @@ library(seqinr)
 library(genoPlotR)
 
 # read in individual csv per genome as the duplicate ter sites have already been sorted.
-# set wd to termination-master inside BT2 Ecoli
-file <- file.choose()
-dir <- dirname(file)
-setwd(dir)
+# set wd to inside BT2 Ecoli BT2 csv results
+setwd(dirname(file.choose()))
 #A
 MG1655 <- read.csv(file.choose())
 BW2952 <- read.csv(file.choose())

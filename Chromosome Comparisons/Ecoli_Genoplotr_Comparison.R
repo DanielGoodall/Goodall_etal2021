@@ -1,47 +1,43 @@
-# updating the figure after paper rejection
-## make the ter sites more visible
-## delete the comparison lines
-## colour code the ter labels with the arrow fill colour
 
-# Using genoplotr from Bpwtie2 data not BLAST to compare the differences
+# Using genoplotr from Bowtie2 data
 
 library(Biostrings)
 library(seqinr)
 library(genoPlotR)
 
 # read in the CSV from find_ter_BT2_Samtools.R
-df <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_geneome_ter_bam.csv', header = TRUE)
+df <- read.csv('Ecoli_geneome_ter_bam.csv', header = TRUE)
 
 #sanity
 df
 
 # read in the CSV files from SAM_ter_tocsv.R program:
 #A
-MG1655 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\MG1655.csv')
-BW2952 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\BW2952.csv')
-REL606 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\REL606.csv')
+MG1655 <- read.csv('MG1655.csv')
+BW2952 <- read.csv('BW2952.csv')
+REL606 <- read.csv('REL606.csv')
 
 #B1
-APEC078 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\APEC078.csv')
-IAI1    <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\IAI1.csv')
-E11368  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\E11368.csv')
+APEC078 <- read.csv('APEC078.csv')
+IAI1    <- read.csv('IAI1.csv')
+E11368  <- read.csv('E11368.csv')
 
 #B2
-S88   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\S88.csv')
-UTI89 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\UTI89.csv')
-E2348 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\E2348.csv')
+S88   <- read.csv('S88.csv')
+UTI89 <- read.csv('UTI89.csv')
+E2348 <- read.csv('E2348.csv')
 
 #D
-IAI39  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\IAI39.csv')
-SMS35  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\SMS35.csv')
-UMN026 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\UMN026.csv')
-CE10   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\CE10.csv')
-D042   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\D042.csv')
+IAI39  <- read.csv('IAI39.csv')
+SMS35  <- read.csv('SMS35.csv')
+UMN026 <- read.csv('UMN026.csv')
+CE10   <- read.csv('CE10.csv')
+D042   <- read.csv('D042.csv')
 
 #E
-TW14359 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\TW14359.csv')
-Sakai   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\Sakai.csv')
-EDL933  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\EDL933.csv')
+TW14359 <- read.csv('TW14359.csv')
+Sakai   <- read.csv('Sakai.csv')
+EDL933  <- read.csv('EDL933.csv')
 
 
 
@@ -167,10 +163,10 @@ Sakai
 EDL933
 
 
-###############################
-#         ADD DIF
-###############################
-dif <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\BLAST_results\\Ecoli\\Ecoli_dif_blastn.csv', header = FALSE)
+####################################
+#         ADD DIF site from BLAST 
+####################################
+dif <- read.csv('Ecoli_dif_blastn.csv', header = FALSE)
 dif <- dif[-c(4,6,7)]
 colnames(dif) <- c('name', 'start', 'end', 'strand')
 dif$strand[dif$strand == 'minus'] <- '-'
@@ -246,7 +242,7 @@ rownames(Sakai) <- NULL
 rownames(EDL933) <- NULL
 
 ###########################################################
-#     now use Genoplotr package andf dna_seg objects
+#     now use Genoplotr package to get dna_seg objects
 ###########################################################
 
 # Turn into dna_seg
@@ -362,7 +358,8 @@ dna15$gene_type[11] <- 'side_blocks'
 dna16$gene_type[11] <- 'side_blocks'
 dna17$gene_type[11] <- 'side_blocks'
 
-# specify dif parameters to stop terC overlap EDL933 and SMS35
+# specify dif parameters to stop terC overlap EDL933 and SMS35 (this is purely aesthetic)
+# Do not run lines 363 - 369 if you want to keep the positions true
 dna17$start[11] <- c(dna17$start[3] + 50700)
 dna17$end[11] <- c(dna17$start[3] + 50750)
 dna17
@@ -476,6 +473,8 @@ plot_gene_map(dna_segs=dna_segs, comparisons=NULL,
 #
 #                                                   REVERSE PLOT
 #
+#                                   This puts the comparison in context of the RFT
+#                           and shows blocking orientations when compared with circle diagrams
 ###################################################################################################################
 
 
