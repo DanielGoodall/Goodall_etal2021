@@ -1,5 +1,5 @@
 # 6. Parse through genoplotR to map their positions then compare
-# 7. PROFIT
+
 
 library(Biostrings)
 library(seqinr)
@@ -180,7 +180,6 @@ col = sample(colours(), 23)
 col #sanity
 
 # manually change the fill to the randomly generated colours
-# can change colours later if they are not pretty enough.. do not worry about them
 list_dna$MG1655[c(5,6)] <- col
 list_dna$APEC078[c(5,6)] <- col
 list_dna$S88[c(5,6)] <- col

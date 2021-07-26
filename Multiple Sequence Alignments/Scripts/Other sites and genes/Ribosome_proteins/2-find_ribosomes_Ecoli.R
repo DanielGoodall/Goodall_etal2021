@@ -5,7 +5,7 @@
 # 4. Export to SAM file using Rsamtools
 # 5. clean the data and put in a spreadsheet as CSV
 # 6. Parse through genoplotR to map their positions then compare
-# 7. PROFIT
+
 
 
 

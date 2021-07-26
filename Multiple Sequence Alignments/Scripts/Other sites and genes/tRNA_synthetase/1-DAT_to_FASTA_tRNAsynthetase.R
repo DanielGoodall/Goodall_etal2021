@@ -2,11 +2,7 @@
 # 2. Create a FASTA file with these genes
 
 
-# RegEx
-#https://www.youtube.com/watch?v=sa-TUpSx1JA
-#https://www.youtube.com/watch?v=rhzKDrUiJVk
-# R Specific RegEx
-#https://www.youtube.com/watch?v=q8SzNKib5-4
+
 
 
 #_______________________________________________________________________________

@@ -1,5 +1,5 @@
 # 6. Parse through genoplotR to map their positions then compare
-# 7. PROFIT
+
 
 library(Biostrings)
 library(seqinr)
@@ -568,7 +568,6 @@ col_rpm = sample(colours(), 10)
 col_rpm #sanity
 
 # manually change the fill to the randomly generated colours
-# can change colours later if they are not pretty enough.. do not worry about them
 list_dna_rpm$MG1655[c(5,6)] <- col_rpm
 list_dna_rpm$APEC078[c(5,6)] <- col_rpm
 list_dna_rpm$S88[c(5,6)] <- col_rpm

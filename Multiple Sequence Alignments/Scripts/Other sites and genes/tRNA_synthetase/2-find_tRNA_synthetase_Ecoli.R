@@ -5,14 +5,7 @@
 # 4. Export to SAM file using Rsamtools
 # 5. clean the data and put in a spreadsheet as CSV
 # 6. Parse through genoplotR to map their positions then compare
-# 7. PROFIT
 
-
-# RegEx
-#https://www.youtube.com/watch?v=sa-TUpSx1JA
-#https://www.youtube.com/watch?v=rhzKDrUiJVk
-# R Specific RegEx
-#https://www.youtube.com/watch?v=q8SzNKib5-4
 
 
 #_______________________________________________________________________________

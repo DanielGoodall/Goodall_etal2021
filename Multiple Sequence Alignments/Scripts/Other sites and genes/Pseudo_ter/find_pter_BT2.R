@@ -1,5 +1,5 @@
 # find position of the pseudo ter sites and see if theres any change in position
-## if they are even there
+
 
 # library
 library(Biostrings)

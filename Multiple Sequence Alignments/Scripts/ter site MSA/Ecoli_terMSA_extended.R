@@ -12,31 +12,31 @@ genomes
 
 # read in the CSV files from ter_clean program:
 #A
-MG1655 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\MG1655.csv')
-BW2952 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\BW2952.csv')
-REL606 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\REL606.csv')
+MG1655 <- read.csv('MG1655.csv')
+BW2952 <- read.csv('BW2952.csv')
+REL606 <- read.csv('REL606.csv')
 
 #B1
-APEC078 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\APEC078.csv')
-IAI1    <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\IAI1.csv')
-E11368  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\E11368.csv')
+APEC078 <- read.csv('APEC078.csv')
+IAI1    <- read.csv('IAI1.csv')
+E11368  <- read.csv('E11368.csv')
 
 #B2
-S88   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\S88.csv')
-UTI89 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\UTI89.csv')
-E2348 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\E2348.csv')
+S88   <- read.csv('S88.csv')
+UTI89 <- read.csv('UTI89.csv')
+E2348 <- read.csv('E2348.csv')
 
 #D
-IAI39  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\IAI39.csv')
-SMS35  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\SMS35.csv')
-UMN026 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\UMN026.csv')
-CE10   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\CE10.csv')
-D042   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\D042.csv')
+IAI39  <- read.csv('IAI39.csv')
+SMS35  <- read.csv('SMS35.csv')
+UMN026 <- read.csv('UMN026.csv')
+CE10   <- read.csv('CE10.csv')
+D042   <- read.csv('D042.csv')
 
 #E
-TW14359 <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\TW14359.csv')
-Sakai   <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\Sakai.csv')
-EDL933  <- read.csv('C:\\Users\\Danie\\Documents\\R\\termination\\bowtie2\\Ecoli_matched_ter_sequences_csv\\EDL933.csv')
+TW14359 <- read.csv('TW14359.csv')
+Sakai   <- read.csv('Sakai.csv')
+EDL933  <- read.csv('EDL933.csv')
 
 
 # Use subseq() to increase window of matched ter sites 25nt either side of ter site

@@ -1,12 +1,11 @@
 # Purpose: 4 shigella phylogroups figures with trigrobs - from BT2 large output
 # Date updated: 26/05/21
 
-# May have to stop half way through coding as the time pressure is too great
 
-# I need to read in 1000 rows of ter sites, split into terA-J, then add the MG1655 seq to each df,
+# read in 1000 rows of ter sites, split into terA-J, then add the MG1655 seq to each df,
 # then align using msa and select only the site which lines up best to get the true ter site,
 # then merge back together to get a complete terA-J df from BT2 origin,
-# then do that for the 4 serotypes, when it would be easier to simply read in the BLAST csv files and plot them...
+# then do that for the 4 serotypes, when it would be easier to simply read in the BLAST csv files and plot to finish.
 
 
 library(tidyverse)
